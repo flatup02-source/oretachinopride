@@ -1,0 +1,50 @@
+ @tailwind base;
+ @tailwind components;
+ @tailwind utilities;
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Press Start 2P', cursive, sans-serif; /* レトロゲーム風フォントを追加 */
+}
+
+/* PRIDEの熱狂を表現する背景グラデーション */
+body {
+  background: linear-gradient(135deg, #1a202c 0%, #3a0000 50%, #1a202c 100%);
+  background-attachment: fixed; /* スクロールしても背景が固定されるように */
+  color: #e2e8f0; /* 全体的な文字色 */
+}
+
+/* Google Fontsのインポート指示 (headに追記推奨) */
+/*
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+*/
+
+/* アニメーション */
+ @keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+ @keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+ @keyframes pulseSlow {
+  0%, 100% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.05); opacity: 0.9; }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out forwards;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s infinite ease-in-out;
+}
+
+.animate-pulse-slow {
+  animation: pulseSlow 3s infinite ease-in-out;
+}
